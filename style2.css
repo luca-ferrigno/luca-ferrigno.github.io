@@ -1,0 +1,47 @@
+/* Set background color and text color */
+body {
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header with a blue background */
+header {
+    background-color: #2980b9; /* Slightly darker blue for the header */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style links */
+a {
+    color: #2980b9; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #1c6ea4; /* Darker blue on hover */
+}
+
+/* Style buttons */
+button {
+    background-color: #2980b9; /* Blue button background color */
+    color: #fff; /* White button text color */
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1c6ea4; /* Darker blue on hover */
+}
+
+/* Style headings with a blue color */
+h1, h2, h3 {
+    color: #2980b9; /* Blue heading color */
+}
+
+/* Add styles for other elements as needed */
