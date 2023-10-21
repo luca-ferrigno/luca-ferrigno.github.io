@@ -19,11 +19,14 @@ header {
 nav {
     background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 20px;
 }
 
 nav ul {
     list-style: none;
     text-align: center;
+    padding: 20px;
 }
 
 nav li {
