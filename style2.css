@@ -1,47 +1,65 @@
-/* Set background color and text color */
+/* Body styles */
 body {
-    background-color: #3498db; /* Blue background color */
-    color: #fff; /* White text color */
+    background-color: #f0f5ff;
     font-family: Arial, sans-serif;
 }
 
-/* Style the header with a blue background */
+/* Header styles */
 header {
-    background-color: #2980b9; /* Slightly darker blue for the header */
-    color: #fff; /* White text color */
+    background-color: #3498db;
+    color: #fff;
     text-align: center;
     padding: 20px;
 }
 
-/* Style links */
-a {
-    color: #2980b9; /* Blue link color */
+/* Navigation styles */
+nav {
+    background-color: #3498db;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
     text-decoration: none;
-    transition: color 0.3s;
+    color: #fff;
 }
 
-a:hover {
-    color: #1c6ea4; /* Darker blue on hover */
+/* Main content styles */
+main {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
 }
 
-/* Style buttons */
-button {
-    background-color: #2980b9; /* Blue button background color */
-    color: #fff; /* White button text color */
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Section styles */
+section {
+    margin-bottom: 30px;
 }
 
-button:hover {
-    background-color: #1c6ea4; /* Darker blue on hover */
+h2 {
+    color: #3498db;
 }
 
-/* Style headings with a blue color */
-h1, h2, h3 {
-    color: #2980b9; /* Blue heading color */
+/* List styles */
+ul {
+    list-style: disc;
+    margin-left: 20px;
 }
 
-/* Add styles for other elements as needed */
+/* Footer styles */
+footer {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
