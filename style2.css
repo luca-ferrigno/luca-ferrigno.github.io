@@ -20,14 +20,17 @@ nav ul {
   padding: 0;
   overflow: hidden;
   background-color: #007dd1;
+  border: 1px solid #ccc;
+  border-width: 1px 0;
+  text-align: center;
 }
 
 nav li {
-  float: center;
+  display: inline;
 }
 
 nav li a {
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
