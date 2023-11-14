@@ -33,8 +33,7 @@ nav ul {
 }
 
 nav li {
-  display: inline;
-  float: left;
+  display: inline-block;
 }
 
 nav li a, .dropbtn {
@@ -97,7 +96,6 @@ li .dropdown {
 /*.dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }*/
-</style>
 
 /* Main content styles */
 main {
