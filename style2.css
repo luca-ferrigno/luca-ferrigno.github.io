@@ -1,3 +1,7 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
 /* Body styles */
 body {
     background-color: #f0f5ff;
@@ -12,7 +16,8 @@ header {
     text-align: center;
     padding: 20px;
     /*font-family: Palatino, URW Palladio L, serif;*/
-    font-family: Baskerville;
+    /*font-family: Baskerville;*/
+    font-family: 'Ubuntu', sans-serif;
     font-size: 24px; 
     font-style: normal; 
     font-variant: normal; 
