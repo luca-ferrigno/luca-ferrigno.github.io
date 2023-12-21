@@ -1,12 +1,14 @@
 /*<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 
 /* Body styles */
 body {
     background-color: #f0f5ff;
     /*font-family: Calibri, sans-serif;*/
-    font-family: Trebuchet MS, sans-serif;
+    /*font-family: Trebuchet MS, sans-serif;*/
+    font: 14px/1 'Open Sans', sans-serif;
 }
 
 /* Header styles */
@@ -16,12 +18,12 @@ header {
     text-align: center;
     padding: 20px;
     /*font-family: Palatino, URW Palladio L, serif;*/
-    font-family: Baskerville;
-    /*font-family: 'Ubuntu', sans-serif;*/
+    /*font-family: Baskerville;*/
+    font: 'Open Sans', sans-serif;
     font-size: 24px; 
     font-style: normal; 
     font-variant: normal; 
-    font-weight: 700; 
+    font-weight: 500; 
     line-height: 26.4px;
 }
 
@@ -101,6 +103,7 @@ li .dropdown {
 /*.dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }*/
+
 
 /* Main content styles */
 main {
