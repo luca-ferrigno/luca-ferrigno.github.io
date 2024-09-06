@@ -8,48 +8,105 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+<style>
+    .collapsible {
+      background-color: #fff;
+      color: black;
+      cursor: pointer;
+      padding: 12px 45px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 14px;
+    }
+    
+    .active {
+        background-color: #ffffff;
+    }
+    .collapsible:hover {
+      background-color: #8dbcf9d4;
+    }
+    
+    .collapsible:after {
+      content: '\002B';
+      color: black;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+    
+    .active:after {
+      content: "\2212";
+    }
+    
+    .content {
+      padding: 0 50px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: #ffffff;
+    }
+    </style>
+</head>
 <body>
-    <header>
-        <h1>Luca Ferrigno</h1>
-        <p>PhD Student at University of Roma Tre</p>
-    </header>
+<header>
+    <h1>Luca Ferrigno</h1>
+    <p>PhD Student at University of Roma Tre</p>
+</header>
 
-  <nav>
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="cv.html">CV</a></li>
-              <li><a href="publications.html">Publications</a></li>
-              <li class="dropdown">
-                <a href="teaching.html" class="dropbtn">Teaching</a>
-                <div class="dropdown-content">
-                    <a href="olimpiadi.html">Olimpiadi della Matematica</a>
-                </div>
-                  </li>
-              <!-- Add more links as needed -->
-          </ul>
-      </nav>
+<nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li class="dropdown">
+            <a href="teaching.html" class="dropbtn">Teaching</a>
+            <div class="dropdown-content">
+                <a href="olimpiadi.html">Olimpiadi della Matematica</a>
+            </div>
+              </li>
+          <!-- Add more links as needed -->
+      </ul>
+  </nav>
 
-    <main>
-            <h2>Articles</h2>
-            <h3>In Preparation</h3>
-            <ul>
-                <li>Isogeny relations in products of families of elliptic curves.</li>
-            </ul>
+<main>
+        <h2>Articles</h2>
+        <button class="collapsible" style="padding-left: 45px;">Isogeny relations in products of families of elliptic curves</button>
+        <div class="content" style="font-size: 90%">
+        <p> ABSTRACT: Let \(E_{\lambda}\) be the Legendre family of elliptic curves with equation
+            \(Y^2=X(X-1)(X-\lambda)\). Given a curve \(\mathcal{C}\), satisfying a condition on
+            the degrees of some of its coordinates and parametrizing \(m\) points \(P_1,
+            \ldots, P_m \in E_{\lambda}\) and \(n\) points \(Q_1, \ldots, Q_n \in E_{\mu}\) and
+            assuming that those points are generically linearly independent over the
+            generic endomorphism ring, we prove that there are at most finitely many points
+            \(\mathbf{c}_0\) on \(\mathcal{C}\), such that there exists an isogeny \(\phi:
+            E_{\mu(\mathbf{c}_0)} \rightarrow E_{\lambda(\mathbf{c}_0)}\) and the \(m+n\)
+            points \(P_1(\mathbf{c}_0), \ldots, P_m(\mathbf{c}_0), \phi(Q_1(\mathbf{c}_0)),
+            \ldots, \phi(Q_n(\mathbf{c}_0)) \in E_{\lambda(\mathbf{c}_0)}\) are linearly
+            dependent over \(\mathrm{End}(E_{\lambda(\mathbf{c}_0)})\).
+            <!--<br>--> <!--Manda a capo, oppure crea un altro <p> block con le stesse opzioni -->
+            <p style="padding-left: 20px" style="font-size: 120%"><a href="https://arxiv.org/abs/2409.01408">Arxiv</a></p>
+        
+        </p>
+        </div>
+        <button class="collapsible" style="padding-left: 45px;">CM relations in families of abelian varieties</button>
+        <div class="content" style="font-size: 85%">
+        <p>In preparation
+        </p>
+        </div>
 
 
-            <h2>Theses</h2>
-            <ul>
-                <li>Master thesis: <a href="https://drive.google.com/file/d/1ccZ7V2Q5NNIlaaYTg8cIQlg-yjGwkpmy/view?usp=sharing">p-adic methods for rational points on curves of genus at least 2</a>. Supervisor: prof. <a href="https://www.math.unipd.it/~mlongo/">Matteo Longo</a><br>
-                    <p style="font-size: 85%">
-                        In 1922, Mordell conjectured that every curve of genus at least 2 has only finitely many rational points and this was later proved by Faltings in 1983. However, in 1941, Chabauty proved that Mordell's conjecture is true with the additional hypothesis that the Mordell-Weil rank of the Jacobian variety over \(\mathbb{Q}\) is strictly less that the genus of the curve. Although this doesn't prove Mordell's conjecture in full generality, Chabauty's ideas lead to the creation of new methods for finding rational points on curves. After proving Chabauty's result and its improvement by Coleman (1985), we will explicitely solve some diophantine equations.
-                    </p>
-                </li>
-                <li>Bachelor Thesis: <a href="https://drive.google.com/file/d/1-7zFIjmu106jxlm3W5assIJiF70oU4hh/view?usp=sharing">Equazioni diofantee e Curve ellittiche</a> (in Italian, en: Diophantine equations and elliptic curves). Supervisor: prof. <a href="https://www.mat.uniroma2.it/~schoof/">René Schoof</a><br>
-                    <p style="font-size: 85%">After introducing the general theory of elliptic curves over \( \mathbb{Q}\) and \(\mathbb{Q}_p\), I investigated the existence and the number of integer solutions of the equations \(\frac{x}{y+z}+\frac{y}{x+z}+\frac{z}{x+y}=N\) and 
-                    \(\frac{x}{y} + \frac{y}{z} + \frac{z}{x} = N\) with \(N \in \mathbb{Z}\). This was done by exhibiting explicit bijections between the integer solutions of the equations and the set of rational points of two elliptc curves (whose coefficients depend on \(N\)), and then using the well-known theory to 
-                    find the rational points of those curves. Furthermore, the existence of special solutions (e.g. solutions with \(x, y, z > 0\)) is studied with the same method.</p>
-                </li>
-            </ul>
+        <h2>Theses</h2>
+        <button class="collapsible" style="padding-left: 45px;">Master thesis: <a href="https://drive.google.com/file/d/1ccZ7V2Q5NNIlaaYTg8cIQlg-yjGwkpmy/view?usp=sharing">p-adic methods for rational points on curves of genus at least 2</a>. Supervisor: prof. <a href="https://www.math.unipd.it/~mlongo/">Matteo Longo</a></button>
+        <div class="content" style="font-size: 85%">
+        <p>In 1922, Mordell conjectured that every curve of genus at least 2 has only finitely many rational points and this was later proved by Faltings in 1983. However, in 1941, Chabauty proved that Mordell's conjecture is true with the additional hypothesis that the Mordell-Weil rank of the Jacobian variety over \(\mathbb{Q}\) is strictly less that the genus of the curve. Although this doesn't prove Mordell's conjecture in full generality, Chabauty's ideas lead to the creation of new methods for finding rational points on curves. After proving Chabauty's result and its improvement by Coleman (1985), we will explicitely solve some diophantine equations.
+        </p>
+        </div>
+        <button class="collapsible" style="padding-left: 45px;">Bachelor Thesis: <a href="https://drive.google.com/file/d/1-7zFIjmu106jxlm3W5assIJiF70oU4hh/view?usp=sharing">Equazioni diofantee e Curve ellittiche</a> (in Italian, en: Diophantine equations and elliptic curves). Supervisor: prof. <a href="https://www.mat.uniroma2.it/~schoof/">René Schoof</a></button>
+        <div class="content" style="font-size: 85%">
+        <p>After introducing the general theory of elliptic curves over \( \mathbb{Q}\) and \(\mathbb{Q}_p\), I investigated the existence and the number of integer solutions of the equations \(\frac{x}{y+z}+\frac{y}{x+z}+\frac{z}{x+y}=N\) and \(\frac{x}{y} + \frac{y}{z} + \frac{z}{x} = N\) with \(N \in \mathbb{Z}\). This was done by exhibiting explicit bijections between the integer solutions of the equations and the set of rational points of two elliptc curves (whose coefficients depend on \(N\)), and then using the well-known theory to find the rational points of those curves. Furthermore, the existence of special solutions (e.g. solutions with \(x, y, z > 0\)) is studied with the same method.</p>
+        </div>
           
             <h2>Talks and slides</h2>
             <ul>
@@ -68,5 +125,22 @@
             <ul>
                 <li><a href="https://drive.google.com/file/d/1fYq_uVig02DUUXVoa9igqMn9yFxMIxYH/view?usp=sharing">List of division polynomials</a></li>
             </ul>
-</body>
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                  coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                      content.style.maxHeight = null;
+                    } else {
+                      content.style.maxHeight = content.scrollHeight + "px";
+                    } 
+                  });
+                }
+                </script>
+
+        </body>
 </html>
