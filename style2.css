@@ -28,6 +28,13 @@ header {
     line-height: 26.4px;
 }
 
+figcaption {
+  margin-top: 10px;
+  font-size: 10px;
+  font-style: italic;
+  color: #555;
+}
+
 @media (max-width: 600px) {
   h1 {
     line-height: 1.2;
