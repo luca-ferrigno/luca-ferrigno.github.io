@@ -146,16 +146,16 @@ footer {
 
 .container {
   text-align: left;
-  background-color: white;
   width: 100%;
-  padding: 0rem;
-  /*border-radius: 10px;
+  /*padding: 0rem;
+  background-color: white;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);*/
   display: flex;
   flex-direction: row;
 }
 
-.container2 {
+/*.container2 {
   text-align: center;
   background-color: white;
   padding: 2rem;
@@ -163,7 +163,7 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: row;
-}
+}*/
 button {
   background-color: #007dd1;
   border: none;
@@ -193,9 +193,9 @@ button {
     width: 100%;  /* Make both sections full width */
 }
 
-  .container2 {
-    flex-direction: column; /* Stack elements vertically on mobile */
-  }
+  /*.container2 {
+    flex-direction: column; /* Stack elements vertically on mobile 
+  }*/
 }
 
 select {
