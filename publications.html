@@ -20,10 +20,11 @@
       outline: none;
       font-size: 14px;
       line-height: 1.5;
+      margin-bottom: auto;
     }
     
     .active {
-        background-color: #ffffff;
+        background-color: #cbe2ff;
     }
     .collapsible:hover {
       background-color: #8dbcf9d4;
@@ -42,11 +43,14 @@
     }
     
     .content {
-      padding: 0 50px;
+      background-color: #cbe2ff4e;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.2s ease-out;
-      background-color: #ffffff;
+      transition: max-height 0.25s ease-out, padding 0.25s ease-out;
+      border-radius: 5px; /* forma stondato */
+      margin: 5px auto 0 auto; /* centrato e separato dal bottone */
+      width: 90%; /* leggermente più stretto del bottone */
+      padding: 0 20px; /* padding chiuso */
     }
     </style>
 </head>
@@ -73,7 +77,7 @@
 
 <main>
         <h2>Articles</h2>
-        <button class="collapsible" style="padding-left: 45px;">Isogeny relations in products of families of elliptic curves</button>
+        <button class="collapsible" style="padding-left: 45px;">Isogeny relations in products of families of elliptic curves (to appear in <em>Forum Mathematicum</em>)</button>
         <div class="content">
         <p style="font-size: 90%"> Let \(E_{\lambda}\) be the Legendre family of elliptic curves with equation
             \(Y^2=X(X-1)(X-\lambda)\). Given a curve \(\mathcal{C}\), satisfying a condition on
@@ -87,7 +91,7 @@
             \ldots, \phi(Q_n(\mathbf{c}_0)) \in E_{\lambda(\mathbf{c}_0)}\) are linearly
             dependent over \(\mathrm{End}(E_{\lambda(\mathbf{c}_0)})\).
             <!-- <br>: Manda a capo, oppure crea un altro <p> block con le stesse opzioni -->
-            <p style="padding-left: 20px"><a href="https://arxiv.org/abs/2409.01408">[Arxiv]</a></p>
+            <p style="padding-left: 20px">[<a href="https://arxiv.org/abs/2409.01408">Arxiv</a>; <a href="https://degruyterbrill.com/document/doi/10.1515/forum-2025-0128/html"> Journal</a>]</p>
         
         </p>
         </div>
@@ -125,7 +129,10 @@
         </div>
         <button class="collapsible" style="padding-left: 45px;">Bachelor Thesis: <a href="https://drive.google.com/file/d/1-7zFIjmu106jxlm3W5assIJiF70oU4hh/view?usp=sharing">Equazioni diofantee e Curve ellittiche</a> (in Italian, en: Diophantine equations and elliptic curves). Supervisor: prof. <a href="https://www.mat.uniroma2.it/~schoof/">René Schoof</a></button>
         <div class="content" style="font-size: 90%">
-        <p>After introducing the general theory of elliptic curves over \( \mathbb{Q}\) and \(\mathbb{Q}_p\), I investigated the existence and the number of integer solutions of the equations \(\frac{x}{y+z}+\frac{y}{x+z}+\frac{z}{x+y}=N\) and \(\frac{x}{y} + \frac{y}{z} + \frac{z}{x} = N\) with \(N \in \mathbb{Z}\). This was done by exhibiting explicit bijections between the integer solutions of the equations and the set of rational points of two elliptic curves (whose coefficients depend on \(N\)), and then using the well-known theory to find the rational points of those curves. Furthermore, the existence of special solutions (e.g. solutions with \(x, y, z > 0\)) is studied with the same method.</p>
+        <p>The aim of this thesis is to study the Diophantine equations
+            \[\frac{x}{y+z} + \frac{y}{x+z} + \frac{z}{x+y} = N \quad\text{and}\quad \frac{x}{y} + \frac{y}{z} + \frac{z}{x} = N,\qquad N\in\mathbb{Z}.\]
+          These equations are investigated by relating them to elliptic curves defined over \(\mathbb{Q}\) and studied via their local properties over \(\mathbb{Q}_p\). For each equation, an explicit correspondence is established between the set of integer solutions and the set of rational points on an elliptic curve whose coefficients depend on \(N\). This reduction allows the application of the classical theory of elliptic curves to study the rational points and, consequently, the integer solutions of the original equations. The same method is also employed to investigate special families of solutions, such as those with \( x, y, z > 0 \).
+        </p>
         </div>
           
             <h2>Talks and slides</h2>
