@@ -1,0 +1,258 @@
+/* Font import (keep as-is) */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
+
+/* Box sizing */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* Root variables & fluid typography */
+:root{
+  --base: 16px; /* conceptual base */
+  --page-max-width: 1200px;
+  --content-padding: 1rem;
+
+  /* Fluid type scale using clamp(min, preferred, max) */
+  --fs-body: clamp(0.95rem, 1.0vw, 1.125rem);  /* ~15px - 18px */
+  --fs-small: clamp(0.8rem, 0.9vw, 0.95rem);
+  --fs-h1:   clamp(1.4rem, 5.0vw, 2.8rem);      /* header title (fluid) */
+  --fs-h2:   clamp(1.1rem, 3.0vw, 1.8rem);
+  --lh-body: 1.6;
+  --lh-heading: 1.18;
+  --btn-padding-y: clamp(0.45rem, 1.2vw, 0.8rem);
+  --btn-padding-x: clamp(0.8rem, 1.4vw, 1.2rem);
+  --radius: 5px;
+}
+
+/* Base page */
+html { font-size: 100%; } /* 1rem = browser default (usually 16px) */
+body {
+  background-color: #f0f5ff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: #111;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+  background-color: #007dd1;
+  color: #fff;
+  text-align: center;
+  padding: 1.25rem; /* 20px equivalent but fluid-friendly */
+  /* remove shorthand font that mixes px - use rem/variables instead */
+}
+
+/* Make sure the header title is semantically an h1 inside header.
+   Fluid size + comfortable line-height so wrapped lines don't get squished */
+header h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.15;            /* modestly tight but readable */
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.02em;
+  word-break: normal;
+  hyphens: auto;
+  white-space: normal;          /* allow normal wrapping */
+  text-wrap: balance;          /* if browser supports, yields nicer breaks */
+  text-align: center;
+  padding: 0.125rem 0;          /* small vertical breathing room */
+}
+
+/* Navigation */
+nav {
+  background-color: transparent; /* header already colored - keep nav inside header if wanted */
+}
+
+/* Use flex for nav so items can wrap nicely */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  gap: 0.25rem;
+  background-color: #007dd1;
+}
+
+/* Each list item can be the positioning context for dropdown */
+nav li {
+  display: inline-block;
+  position: relative; /* IMPORTANT: context for absolute dropdown */
+}
+
+/* Links and dropdown button */
+nav a,
+nav .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 0.55rem 0.8rem; /* good touch target */
+  text-decoration: none;
+  font-size: var(--fs-body);
+}
+
+/* Hover effect */
+nav li a:hover,
+nav .dropbtn:hover {
+  background-color: #005fa0;
+}
+
+/* Dropdown container inside li */
+nav li .dropdown {
+  display: inline-block;
+  /* remove absolute here; let .dropdown-content be absolute */
+}
+
+/* Dropdown content (positioned relative to parent li) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: #111;
+  padding: 0.625rem 1rem;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Hover reveal */
+.dropdown:hover .dropdown-content,
+nav li:focus-within .dropdown-content {
+  display: block;
+}
+
+/* Main content */
+main {
+  background-color: #fff;
+  padding: 1.25rem;
+  border: 1px solid #3498db;
+  margin: 1rem;
+  border-radius: 6px;
+}
+
+/* Section spacing */
+section { margin-bottom: 1.875rem; } /* 30px equivalent */
+
+/* Headings */
+h2, h3 {
+  color: #3498db;
+  line-height: var(--lh-heading);
+  margin: 0 0 0.75rem 0;
+}
+
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: clamp(1.0rem, 2.0vw, 1.45rem); }
+
+/* Lists */
+ul { list-style: disc; margin-left: 1.25rem; }
+
+/* Footer */
+footer {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+/* Container layout */
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* On small screens stack the container columns */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* If you have an image/text split */
+.image, .text {
+  flex: 1 1 0%;
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .image, .text {
+    width: 100%;
+  }
+}
+
+/* Buttons */
+button, .btn {
+  background-color: #007dd1;
+  border: none;
+  color: white;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--fs-body);
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+/* Prompt style */
+#prompt {
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+  margin-top: 1.25rem;
+}
+
+/* Select look */
+select {
+  background-color: #3fa0e0;
+  border: none;
+  color: white;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  font-size: var(--fs-body);
+  margin: 0.25rem 0.25rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* Images responsive */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Small text */
+small, .small { font-size: var(--fs-small); }
+
+/* Accessibility: focus outlines for keyboard navigation */
+a:focus, button:focus, select:focus {
+  outline: 3px solid rgba(0,123,255,0.25);
+  outline-offset: 2px;
+}
+
+/* Optional: tighten header on very small screens */
+@media (max-width: 360px) {
+  header { padding: 0.75rem; }
+  header h1 { line-height: 1.12; }
+}
