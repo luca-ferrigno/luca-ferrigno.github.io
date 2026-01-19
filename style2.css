@@ -2,14 +2,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
 
 /* Body styles */
 body {
     background-color: #f0f5ff;
-    /*font-family: Calibri, sans-serif;*/
-    /*font-family: Trebuchet MS, sans-serif;*/
-    font: 14px/1 'Open Sans', sans-serif;
-    line-height: 170%;
+    font-family: 'Lexend', 'Open Sans', 'Google Sans', 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 350;
+    font-style: normal;
 }
 
 /* Header styles */
@@ -18,9 +24,7 @@ header {
     color: #fff;
     text-align: center;
     padding: 20px;
-    /*font-family: Palatino, URW Palladio L, serif;*/
-    /*font-family: Baskerville;*/
-    font: 'Open Sans', sans-serif;
+    font-family: 'Google Sans', sans-serif;
     font-size: 24px; 
     font-style: normal; 
     font-variant: normal; 
@@ -176,8 +180,9 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font: 16px/1 'Open Sans', sans-serif;
+  font-family: 'Lexend', 'Open Sans', 'Google Sans', 'Roboto', sans-serif;
   font-size: 16px;
+  font-weight: 350;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
