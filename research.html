@@ -9,52 +9,48 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <style>
-    .collapsible {
-      background-color: #fff;
-      color: black;
-      cursor: pointer;
-      padding: 12px 45px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: auto;
-    }
-    
-    .active {
-        background-color: #cbe2ff;
-    }
-    .collapsible:hover {
-      background-color: #8dbcf9d4;
-    }
-    
-    .collapsible:after {
-      content: '\002B';
-      color: black;
-      font-weight: bold;
-      float: right;
-      margin-left: 5px;
-    }
-    
-    .active:after {
-      content: "\2212";
-    }
-    
-    .content {
-      background-color: #cbe2ff5e;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.25s ease-out, padding 0.25s ease-out;
-      border-radius: 0 7px 7px 0; /* forma stondato */
-      border-left: 3px solid #91b7d2;
-      margin: 5px auto 0 auto; /* centrato e separato dal bottone */
-      width: 90%; /* leggermente più stretto del bottone */
-      padding: 0 20px; /* padding chiuso */
-    }
-    </style>
-</head>
+  
+  .pub-title {
+    background: none;
+    border: none;
+    padding-left: 25px;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  /* arrow indicator */
+  .pub-title::before {
+    content: "▸ ";
+    font-size: 1.3em; /* aumenta la dimensione della freccia */
+    color: #3498db;
+  }
+
+  .pub-title.active::before {
+    content: "▾ ";
+  }
+
+  .pub-abstract {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    word-wrap: break-word;
+    background-color: #cbe2ff5e; 
+    border-radius: 0 7px 7px 0; /* forma stondato */ 
+    border-left: 3px solid #007dd16f; 
+    margin: 5px auto 5px auto; /* centrato e separato dal bottone */ 
+    width: 90%; /* leggermente più stretto del bottone */ 
+    padding: 0 20px; /* padding chiuso */
+    transition: height 0.5s ease, opacity 0.4s ease, padding 0.4s ease;
+  }
+
+  /* stato aperto */
+  .pub-abstract.open {
+    max-height: auto;           /*ho messo auto, se funziona male ritorna a 500px, è abbastanza grande da contenere qualsiasi abstract */
+    opacity: 1;
+  }
+</style>
+
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWF21NGMWW"></script>
@@ -88,104 +84,139 @@
   </nav>
 
 <main>
-        <h2>Articles</h2>
-        <button class="collapsible" style="padding-left: 45px;"><b>Isogeny relations in products of families of elliptic curves</b> (2026, <em>Forum Mathematicum</em>, vol. 38, no. 3, pp. 939-953)</button>
-        <div class="content">
-        <p style="font-size: 90%"> Let \(E_{\lambda}\) be the Legendre family of elliptic curves with equation
-            \(Y^2=X(X-1)(X-\lambda)\). Given a curve \(\mathcal{C}\), satisfying a condition on
-            the degrees of some of its coordinates and parametrizing \(m\) points \(P_1,
-            \ldots, P_m \in E_{\lambda}\) and \(n\) points \(Q_1, \ldots, Q_n \in E_{\mu}\) and
-            assuming that those points are generically linearly independent over the
-            generic endomorphism ring, we prove that there are at most finitely many points
-            \(\mathbf{c}_0\) on \(\mathcal{C}\), such that there exists an isogeny \(\phi:
-            E_{\mu(\mathbf{c}_0)} \rightarrow E_{\lambda(\mathbf{c}_0)}\) and the \(m+n\)
-            points \(P_1(\mathbf{c}_0), \ldots, P_m(\mathbf{c}_0), \phi(Q_1(\mathbf{c}_0)),
-            \ldots, \phi(Q_n(\mathbf{c}_0)) \in E_{\lambda(\mathbf{c}_0)}\) are linearly
-            dependent over \(\mathrm{End}(E_{\lambda(\mathbf{c}_0)})\).
-            <!-- <br>: Manda a capo, oppure crea un altro <p> block con le stesse opzioni -->
-            <p style="padding-left: 20px">[<a href="https://arxiv.org/abs/2409.01408">Arxiv</a>; <a href="https://degruyterbrill.com/document/doi/10.1515/forum-2025-0128/html"> Journal</a>]</p>
-        
-        </p>
-        </div>
-
-        <h3 style="padding-left: 10px;">Preprints</h3>
-
-        <button class="collapsible" style="padding-left: 45px;"><b>Unlikely intersections with CM abelian varieties in a family and explicit bounds for canonical heights under endomorphisms</b> (2026)</button>
-        <div class="content">
-        <p style="font-size: 90%">Let \(S\) be a smooth irreducible curve over \(\overline{\mathbb{Q}}\), and let \(\mathcal{A} \to S\) be an abelian scheme with a curve \(C \subset \mathcal{A}\), both defined over \(\overline{\mathbb{Q}}\). In 2020, Barroero and Capuano proved that if \(C\) is not contained in a proper subgroup scheme, then the intersection of \(C\) with the union of the flat subgroup schemes of \(\mathcal{A}\) of codimension at least 2 is finite. In this article, we continue to study this problem by considering the intersections with the algebraic subgroups of the CM fibers, generalizing a previous result of Barroero for fibered powers of elliptic schemes. A key ingredient of the proof is an explicit control of canonical heights under endomorphisms: for an abelian variety \(A/\overline{\mathbb{Q}}\), an ample symmetric divisor \(D\), and \(f \in \mathrm{End}(A)\), we bound explicitly \(\widehat{h}_{A, D}(f(P))\) in terms of \(\widehat{h}_{A, D}(P)\) by determining the values of \(\lambda \in \mathbb{R}\) for which the divisors \(\lambda D - f^* D\) and \(f^* D - \lambda D\) are ample.
-
-          <p style="padding-left: 20px">[<a href="https://arxiv.org/abs/2601.05919">Arxiv</a>]</p>
-        </p>
-        </div>
-
-        <!--<button class="collapsible" style="padding-left: 45px;"><b>CM relations in families of abelian varieties</b></button>
-        <div class="content">
-        <p style="font-size: 90%">In preparation
-        </p>
-        </div>-->
+  <!-- Sintassi: <b>TITLE</b>, with... (year, <em>journal</em>, altre info) -->
+<h2>Articles</h2>
+  <span class="pub-title" onclick="toggleAbstract(this)">
+    <b>Isogeny relations in products of families of elliptic curves</b> (2026, <em>Forum Mathematicum</em>, vol. 38, no. 3, pp. 939-953)
+  </span>
+    <div class="pub-abstract">
+    <p style="font-size: 90%"> 
+      Let \(E_{\lambda}\) be the Legendre family of elliptic curves with equation \(Y^2=X(X-1)(X-\lambda)\). Given a curve \(\mathcal{C}\), satisfying a condition on the degrees of some of its coordinates and parametrizing \(m\) points \(P_1, \ldots, P_m \in E_{\lambda}\) and \(n\) points \(Q_1, \ldots, Q_n \in E_{\mu}\) and assuming that those points are generically linearly independent over the generic endomorphism ring, we prove that there are at most finitely many points \(\mathbf{c}_0\) on \(\mathcal{C}\), such that there exists an isogeny \(\phi: E_{\mu(\mathbf{c}_0)} \rightarrow E_{\lambda(\mathbf{c}_0)}\) and the \(m+n\) points \(P_1(\mathbf{c}_0), \ldots, P_m(\mathbf{c}_0), \phi(Q_1(\mathbf{c}_0)), \ldots, \phi(Q_n(\mathbf{c}_0)) \in E_{\lambda(\mathbf{c}_0)}\) are linearly dependent over \(\mathrm{End}(E_{\lambda(\mathbf{c}_0)})\).
+    </p>
+    <!-- <br>: Manda a capo, oppure crea un altro <p> block con le stesse opzioni -->
+    <p style="padding-left: 20px">
+      [<a href="https://arxiv.org/abs/2409.01408">Arxiv</a>; <a href="https://degruyterbrill.com/document/doi/10.1515/forum-2025-0128/html"> Journal</a>]
+    </p>
+    </div>
 
 
-        <h2>Theses</h2>
-        <button class="collapsible" style="padding-left: 45px;">PhD thesis: <a href="https://drive.google.com/file/d/1dDmq9L5MNf58cGnIovmnUGsxtWUYTWP9/view?usp=sharing"><b>Some problems of unlikely intersections in families of abelian varieties</b></a>. October 2025, Supervisor: prof. <a href="https://sites.google.com/site/barroerofabrizio/Home">Fabrizio Barroero</a></button>
-        <div class="content" style="font-size: 90%">
-        <p>This thesis investigates several instances of the Zilber–Pink conjecture, formulated independently by Bombieri, Masser and Zannier for tori, by Zilber for semiabelian varieties, and later generalized by Pink in the framework of mixed Shimura varieties. The conjecture, which unifies and extends fundamental results in arithmetic geometry, has been intensively studied over the last two decades. <br>
+<h3 style="padding-left: 7px;">Preprints</h3>
+  <span class="pub-title" onclick="toggleAbstract(this)">
+    <b>Unlikely intersections with CM abelian varieties in a family and explicit bounds for canonical heights under endomorphisms</b> (2026)
+  </span>
+    <div class="pub-abstract">
+    <p style="font-size: 90%">
+      Let \(S\) be a smooth irreducible curve over \(\overline{\mathbb{Q}}\), and let \(\mathcal{A} \to S\) be an abelian scheme with a curve \(C \subset \mathcal{A}\), both defined over \(\overline{\mathbb{Q}}\). In 2020, Barroero and Capuano proved that if \(C\) is not contained in a proper subgroup scheme, then the intersection of \(C\) with the union of the flat subgroup schemes of \(\mathcal{A}\) of codimension at least 2 is finite. In this article, we continue to study this problem by considering the intersections with the algebraic subgroups of the CM fibers, generalizing a previous result of Barroero for fibered powers of elliptic schemes. A key ingredient of the proof is an explicit control of canonical heights under endomorphisms: for an abelian variety \(A/\overline{\mathbb{Q}}\), an ample symmetric divisor \(D\), and \(f \in \mathrm{End}(A)\), we bound explicitly \(\widehat{h}_{A, D}(f(P))\) in terms of \(\widehat{h}_{A, D}(P)\) by determining the values of \(\lambda \in \mathbb{R}\) for which the divisors \(\lambda D - f^* D\) and \(f^* D - \lambda D\) are ample.
+    </p>
+    <p style="padding-left: 20px">
+      [<a href="https://arxiv.org/abs/2601.05919">Arxiv</a>]
+    </p>
+    </div>
 
-        Our focus lies on the case of curves in families of abelian varieties. 
-        First, for curves in products of fibered powers of elliptic schemes, we prove that such a curve contains only finitely many points lying in an algebraic subgroup of a fiber for which there exist non-trivial homomorphisms between the two powers, extending previous results of Masser-Zannier and Barroero-Capuano. <br>
+<h2>Theses</h2>
+  <span class="pub-title" onclick="toggleAbstract(this)">
+    PhD thesis: <a href="https://drive.google.com/file/d/1dDmq9L5MNf58cGnIovmnUGsxtWUYTWP9/view?usp=sharing"><b>Some problems of unlikely intersections in families of abelian varieties</b></a>. October 2025, Supervisor: prof. <a href="https://sites.google.com/site/barroerofabrizio/Home">Fabrizio Barroero</a>
+  </span>
+    <div class="pub-abstract" style="font-size: 90%">
+    <p>
+      This thesis investigates several instances of the Zilber–Pink conjecture, formulated independently by Bombieri, Masser and Zannier for tori, by Zilber for semiabelian varieties, and later generalized by Pink in the framework of mixed Shimura varieties. The conjecture, which unifies and extends fundamental results in arithmetic geometry, has been intensively studied over the last two decades. <br>
+      Our focus lies on the case of curves in families of abelian varieties. First, for curves in products of fibered powers of elliptic schemes, we prove that such a curve contains only finitely many points lying in an algebraic subgroup of a fiber for which there exist non-trivial homomorphisms between the two powers, extending previous results of Masser-Zannier and Barroero-Capuano. <br>
+      Second, for curves in non-isotrivial abelian schemes \(A \to S\), we prove that if \(C \subset A\) is not contained in a fiber nor in a translate of a flat subgroup scheme, then \(C\) meets the union of all proper algebraic subgroups of the CM fibers of \(A\) in at most finitely many points. This generalizes a previous result by Barroero for fibered powers of elliptic schemes to higher-dimensional abelian varieties. <br>
+      Both results are obtained using the Pila–Zannier strategy, combining functional transcendence and o-minimality with new arithmetic estimates for canonical heights of images of points under endomorphisms in abelian varieties.
+    </p>
+    </div>
 
-        Second, for curves in non-isotrivial abelian schemes \(A \to S\), we prove that if \(C \subset A\) is not contained in a fiber nor in a translate of a flat subgroup scheme, then \(C\) meets the union of all proper algebraic subgroups of the CM fibers of \(A\) in at most finitely many points. This generalizes a previous result by Barroero for fibered powers of elliptic schemes to higher-dimensional abelian varieties. <br>
+  <span class="pub-title" onclick="toggleAbstract(this)">
+    Master thesis: <a href="https://drive.google.com/file/d/1ccZ7V2Q5NNIlaaYTg8cIQlg-yjGwkpmy/view?usp=sharing"><b>p-adic methods for rational points on curves of genus at least 2</b></a>. September 2021, Supervisor: prof. <a href="https://www.math.unipd.it/~mlongo/">Matteo Longo</a>
+  </span>
+    <div class="pub-abstract" style="font-size: 90%">
+    <p>
+      In 1922, Mordell conjectured that every curve of genus at least 2 has only finitely many rational points and this was later proved by Faltings in 1983. However, in 1941, Chabauty proved that Mordell's conjecture is true with the additional hypothesis that the Mordell-Weil rank of the Jacobian variety over \(\mathbb{Q}\) is strictly less that the genus of the curve. Although this doesn't prove Mordell's conjecture in full generality, Chabauty's ideas lead to the creation of new methods for finding rational points on curves. After proving Chabauty's result and its improvement by Coleman (1985), we will explicitely solve some diophantine equations.
+    </p>
+    </div>
 
-        Both results are obtained using the Pila–Zannier strategy, combining functional transcendence and o-minimality with new arithmetic estimates for canonical heights of images of points under endomorphisms in abelian varieties.
-        </p>
-        </div>
-        <button class="collapsible" style="padding-left: 45px;">Master thesis: <a href="https://drive.google.com/file/d/1ccZ7V2Q5NNIlaaYTg8cIQlg-yjGwkpmy/view?usp=sharing"><b>p-adic methods for rational points on curves of genus at least 2</b></a>. September 2021, Supervisor: prof. <a href="https://www.math.unipd.it/~mlongo/">Matteo Longo</a></button>
-        <div class="content" style="font-size: 90%">
-        <p>In 1922, Mordell conjectured that every curve of genus at least 2 has only finitely many rational points and this was later proved by Faltings in 1983. However, in 1941, Chabauty proved that Mordell's conjecture is true with the additional hypothesis that the Mordell-Weil rank of the Jacobian variety over \(\mathbb{Q}\) is strictly less that the genus of the curve. Although this doesn't prove Mordell's conjecture in full generality, Chabauty's ideas lead to the creation of new methods for finding rational points on curves. After proving Chabauty's result and its improvement by Coleman (1985), we will explicitely solve some diophantine equations.
-        </p>
-        </div>
-        <button class="collapsible" style="padding-left: 45px;">Bachelor Thesis: <a href="https://drive.google.com/file/d/1-7zFIjmu106jxlm3W5assIJiF70oU4hh/view?usp=sharing"><b>Equazioni diofantee e Curve ellittiche</b></a> (in Italian, en: Diophantine equations and elliptic curves). July 2019, Supervisor: prof. <a href="https://www.mat.uniroma2.it/~schoof/">René Schoof</a></button>
-        <div class="content" style="font-size: 90%">
-        <p>The aim of this thesis is to study the Diophantine equations
-            \[\frac{x}{y+z} + \frac{y}{x+z} + \frac{z}{x+y} = N \quad\text{and}\quad \frac{x}{y} + \frac{y}{z} + \frac{z}{x} = N,\qquad N\in\mathbb{Z}.\]
-          These equations are investigated by relating them to elliptic curves defined over \(\mathbb{Q}\) and studied via their local properties over \(\mathbb{Q}_p\). For each equation, an explicit correspondence is established between the set of integer solutions and the set of rational points on an elliptic curve whose coefficients depend on \(N\). This reduction allows the application of the classical theory of elliptic curves to study the rational points and, consequently, the integer solutions of the original equations. The same method is also employed to investigate special families of solutions, such as those with \( x, y, z > 0 \).
-        </p>
-        </div>
+  <span class="pub-title" onclick="toggleAbstract(this)">
+    Bachelor Thesis: <a href="https://drive.google.com/file/d/1-7zFIjmu106jxlm3W5assIJiF70oU4hh/view?usp=sharing"><b>Equazioni diofantee e Curve ellittiche</b></a> (in Italian, en: Diophantine equations and elliptic curves). July 2019, Supervisor: prof. <a href="https://www.mat.uniroma2.it/~schoof/">René Schoof</a>
+  </span>
+    <div class="pub-abstract" style="font-size: 90%">
+    <p>
+      The aim of this thesis is to study the Diophantine equations
+        \[\frac{x}{y+z} + \frac{y}{x+z} + \frac{z}{x+y} = N \quad\text{and}\quad \frac{x}{y} + \frac{y}{z} + \frac{z}{x} = N,\qquad N\in\mathbb{Z}.\]
+      These equations are investigated by relating them to elliptic curves defined over \(\mathbb{Q}\) and studied via their local properties over \(\mathbb{Q}_p\). For each equation, an explicit correspondence is established between the set of integer solutions and the set of rational points on an elliptic curve whose coefficients depend on \(N\). This reduction allows the application of the classical theory of elliptic curves to study the rational points and, consequently, the integer solutions of the original equations. The same method is also employed to investigate special families of solutions, such as those with \( x, y, z > 0 \).
+    </p>
+    </div>
           
-            <h2>(Some) Talks and slides</h2>
-            <ul>
-                <li> <i>Some problems of unlikely intersections in families of abelian varieties</i>, PhD defense, University of Roma Tre, 16/10/2025. <a href="https://drive.google.com/file/d/1mVgDLJpE4Cg72QAjZz3QaI0-HyK3lDT3/view">Slides</a>.</li>
-                <li> <i>Isogeny relations in products of families of elliptic curves</i> :
-                    <ul>
-                        <li><a href="https://y-rant.github.io/">Young Researchers in Algebraic Number Theory (Y-RANT) VI </a>, University of Oxford, 1/08/2024. <a href="https://drive.google.com/file/d/1HLQ9sqdwh-VjNJC-22ciZnfaHMoh3SKy/view?usp=sharing">Slides</a>.</li>
-                        <li><a href="https://mordell.org/">The Mordell conjecture 100 years later</a>, MIT,  9/07/2024. <a href="https://drive.google.com/file/d/1Cq4Fq88anMUrjKindjHcpe7dAviYCkG2/view?usp=sharing">Slides</a>.</li>
-                        <li><a href="http://www.rnta.eu/8MSRNTA/index.html">8th Mini Symposium of the Roman Number Theory Association</a>, University of Roma Tre, 17/04/2024. <a href="https://drive.google.com/file/d/1zLvfuh4JEpHDlPpB_G8QBVHnwQam_WfN/view?usp=sharing">Slides</a>.</li>
-                    </ul> 
-                <li><i>Unlikely Intersections in Diophantine geometry</i> : <a href="http://ricerca.mat.uniroma3.it/seminari/junior_seminars.html">Junior Seminar</a>, University of Roma Tre, 12/12/2023. <a href="https://drive.google.com/file/d/1oRj2z4px0seDKnD30AlLXokBeCovCpS4/view?usp=sharing">Slides</a>.</li>
-                <li><i>Some topics in Diophantine geometry</i> : <a href="https://sites.google.com/view/gtm-r3/"> PhD seminars</a>, University of Roma Tre, 7/02/2022. Handwritten <a href="https://drive.google.com/file/d/14ywe8T-NVNlYuSDNNN4bRvNb7aewh7m_/view?usp=sharing">notes</a>.</li>
-                <li><i>I tre grandi problemi dell'antichità (più uno) e numeri costruibili</i> : Outreach talk about constructible numbers (in italian), given at Liceo Scientifico "Teresa Gullace Talotta" (Rome) on the International Day of Mathematics 2022 (14/03/2022). <a href="https://drive.google.com/file/d/1k-EveNZspyiU8wUkXFQ8F6RWemRlFgn1/view?usp=sharing">Slides</a>.</li>
-            </ul>
+<h2>(Some) Talks and slides</h2>
+  <ul>
+    <li> 
+      <i>Some problems of unlikely intersections in families of abelian varieties</i>, PhD defense, University of Roma Tre, 16/10/2025. <a href="https://drive.google.com/file/d/1mVgDLJpE4Cg72QAjZz3QaI0-HyK3lDT3/view">Slides</a>.
+    </li>
+    <li> 
+      <i>Isogeny relations in products of families of elliptic curves</i> :
+      <ul>
+        <li>
+          <a href="https://y-rant.github.io/">Young Researchers in Algebraic Number Theory (Y-RANT) VI </a>, University of Oxford, 1/08/2024. <a href="https://drive.google.com/file/d/1HLQ9sqdwh-VjNJC-22ciZnfaHMoh3SKy/view?usp=sharing">Slides</a>.
+        </li>
+        <li>
+          <a href="https://mordell.org/">The Mordell conjecture 100 years later</a>, MIT,  9/07/2024. <a href="https://drive.google.com/file/d/1Cq4Fq88anMUrjKindjHcpe7dAviYCkG2/view?usp=sharing">Slides</a>.
+        </li>
+        <li>
+          <a href="http://www.rnta.eu/8MSRNTA/index.html">8th Mini Symposium of the Roman Number Theory Association</a>, University of Roma Tre, 17/04/2024. <a href="https://drive.google.com/file/d/1zLvfuh4JEpHDlPpB_G8QBVHnwQam_WfN/view?usp=sharing">Slides</a>.
+        </li>
+      </ul> 
+    <li>
+      <i>Unlikely Intersections in Diophantine geometry</i> : <a href="http://ricerca.mat.uniroma3.it/seminari/junior_seminars.html">Junior Seminar</a>, University of Roma Tre, 12/12/2023. <a href="https://drive.google.com/file/d/1oRj2z4px0seDKnD30AlLXokBeCovCpS4/view?usp=sharing">Slides</a>.
+    </li>
+    <li>
+      <i>Some topics in Diophantine geometry</i> : <a href="https://sites.google.com/view/gtm-r3/"> PhD seminars</a>, University of Roma Tre, 7/02/2022. Handwritten <a href="https://drive.google.com/file/d/14ywe8T-NVNlYuSDNNN4bRvNb7aewh7m_/view?usp=sharing">notes</a>.
+    </li>
+    <li>
+      <i>I tre grandi problemi dell'antichità (più uno) e numeri costruibili</i> : Outreach talk about constructible numbers (in italian), given at Liceo Scientifico "Teresa Gullace Talotta" (Rome) on the International Day of Mathematics 2022 (14/03/2022). <a href="https://drive.google.com/file/d/1k-EveNZspyiU8wUkXFQ8F6RWemRlFgn1/view?usp=sharing">Slides</a>.
+    </li>
+  </ul>
 
-            <h2>Notes</h2>
-            <ul>
-                <li><a href="https://drive.google.com/file/d/1lmpiMQIlHztr4wliOutAQEG9nDXIR2sA/view?usp=sharing">Notes</a> about endomorphisms of abelian varieties, for a <a href="https://amosturchet.github.io/abelian.html">reading course</a> at University of Roma Tre.</li>
-                <li><a href="https://drive.google.com/file/d/1fYq_uVig02DUUXVoa9igqMn9yFxMIxYH/view?usp=sharing">List of division polynomials</a></li>
-            </ul>
-            <script>
-                var coll = document.getElementsByClassName("collapsible");
-                var i;
-                
-                for (i = 0; i < coll.length; i++) {
-                  coll[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.maxHeight){
-                      content.style.maxHeight = null;
-                    } else {
-                      content.style.maxHeight = content.scrollHeight + "px";
-                    } 
-                  });
-                }
-                </script>
+<h2>Notes</h2>
+  <ul>
+    <li><a href="https://drive.google.com/file/d/1lmpiMQIlHztr4wliOutAQEG9nDXIR2sA/view?usp=sharing">Notes</a> about endomorphisms of abelian varieties, for a <a href="https://amosturchet.github.io/abelian.html">reading course</a> at University of Roma Tre.</li>
+    <li><a href="https://drive.google.com/file/d/1fYq_uVig02DUUXVoa9igqMn9yFxMIxYH/view?usp=sharing">List of division polynomials</a></li>
+  </ul>
 
-        </body>
+
+
+<script>
+document.querySelectorAll(".pub-title").forEach(title => {
+  title.addEventListener("click", () => {
+    const abstract = title.nextElementSibling;
+
+    // chiudi gli altri
+    document.querySelectorAll(".pub-abstract").forEach(a => {
+      if (a !== abstract) {
+        a.style.height = 0;
+        a.style.opacity = 0;
+        a.style.paddingTop = 0;
+        a.style.paddingBottom = 0;
+        a.previousElementSibling.classList.remove("active");
+      }
+    });
+
+    if (abstract.style.height && abstract.style.height !== "0px") {
+      // chiudi corrente
+      abstract.style.height = 0;
+      abstract.style.opacity = 0;
+      abstract.style.paddingTop = 0;
+      abstract.style.paddingBottom = 0;
+      title.classList.remove("active");
+    } else {
+      // apri corrente
+      const scrollHeight = abstract.scrollHeight;
+      abstract.style.height = scrollHeight + "px";
+      abstract.style.opacity = 1;
+      abstract.style.paddingTop = "0px";
+      abstract.style.paddingBottom = "0px";
+      title.classList.add("active");
+    }
+  });
+});
+</script>
+</body>
 </html>

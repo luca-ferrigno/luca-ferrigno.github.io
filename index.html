@@ -100,10 +100,10 @@
 
     <script>
                 const images = [
-            { src: "20240724_220931.jpg", caption: "Me at MIT (2024, photo by Lorenzo Furio)" },
-            { src: "1725464515714-1.jpg", caption: "Me in Montepulciano (2024, photo by Emiliano Valente)" },
-            { src: "IMG_20221123_223319_597.jpg", caption: "Me in Madrid (2022, photo by Emiliano Valente)" },
-            { src: "IMG_20240801_143232.jpg", caption: "Me giving a talk in Oxford (2024, photo by Robin Visser)" }
+            { src: "photo1.jpg", caption: "Me at MIT (2024, photo by Lorenzo Furio)<br><small>Reload to see another picture" },
+            { src: "photo2.jpg", caption: "Me in Montepulciano (2024, photo by Emiliano Valente)<br><small>Reload to see another picture" },
+            { src: "photo3.jpg", caption: "Me in Madrid (2022, photo by Emiliano Valente)<br><small>Reload to see another picture" },
+            { src: "photo4.jpg", caption: "Me giving a talk in Oxford (2024, photo by Robin Visser)<br><small>Reload to see another picture" }
         ];
 
         // Select a random image
@@ -112,7 +112,7 @@
 
         // Set the image source and caption
         document.getElementById("randomImage").src = randomImage.src;
-        document.getElementById("caption").textContent = randomImage.caption;
+        document.getElementById("caption").innerHTML = randomImage.caption;
     </script>
 </body>
 </html>
