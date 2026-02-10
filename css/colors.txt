@@ -1,0 +1,8 @@
+Main:
+#3498db
+
+Secondary:
+#b31b1b 
+#033f63
+#e1bc29
+#5ba054
